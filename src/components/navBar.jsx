@@ -1,36 +1,22 @@
-import React, {useState} from "react"
+import React from "react"
+import NavLink from "./navLink"
 
-
-const NavBar = () => {
-
-    const [open, setOpen] = useState(false)
-    const [menuItems, setMenuItems] = useState([
-        'Главная',
-        'Блог',
-        'Контакты',
-    ])
-    const handleMenuClick = () => {
-        setOpen((prevState) => !prevState)
-    }
-    const handleItemClick =(id) => {
-        console.log()
-    }
+const NavBar = ({ menuItems, onItemClick}) => { 
 
     return(
         <div>
-            <button className="btn btn-sm btn-primary"
-                    onClick={handleMenuClick}
-            >
-                меню
-            </button>
-            {open &&(
-                <ul className="list-group">
-                    {menuItems.map((item) =>{
                         
-                    })}
-                </ul>
-            )}
+            <ul className="nav nav-pills flex-column mb-auto">
+                    {menuItems.map((item) => (
+                        <NavLink 
+                        key={ item.id } 
+                       {...item}
+                        onActiveChange={onItemClick}
+                        />
+                    ))}
+            </ul>
         </div>
     )
 }
+
 export default NavBar
