@@ -13,7 +13,7 @@ const handleClick = () => {
 //Создание стиля
 const getClasses = ( ) => {
     let classes = "nav-link"
-    return (classes += props.active ? 'active' : '')
+    return (classes += props.active ? ' active' : '')
 }
 
     return ( 

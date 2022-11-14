@@ -2,7 +2,7 @@ import React from "react"
 
 const BreadCrumbs = ({ page, onGoMain}) => {
     const isMainPage = page.id === 'main'
-    const mainClasses = 'breadcrumb-item' + (isMainPage ? ' active' : '')
+    const mainClasses = 'breadcrumb-item ' + (isMainPage ? '  active' : '')
 
     return(
         <nav>
